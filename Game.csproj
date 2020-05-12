@@ -163,6 +163,12 @@
     <Compile Include="Engine\Monsters\Rat.cs" />
     <Compile Include="Engine\Monsters\RatEvolved.cs" />
     <Compile Include="Engine\SaveData.cs" />
+    <Compile Include="Engine\Skills\AdvancedWeaponMoves\LimbCut.cs" />
+    <Compile Include="Engine\Skills\AdvancedWeaponMoves\LimbCutDecorator.cs" />
+    <Compile Include="Engine\Skills\AdvancedWeaponMoves\SwordDance.cs" />
+    <Compile Include="Engine\Skills\AdvancedWeaponMoves\SwordDanceDecorator.cs" />
+    <Compile Include="Engine\Skills\AdvancedWeaponMoves\SwordStab.cs" />
+    <Compile Include="Engine\Skills\AdvancedWeaponMoves\SwordStabDecorator.cs" />
     <Compile Include="Engine\Skills\BasicSpells\FireArrow.cs" />
     <Compile Include="Engine\Skills\BasicSpells\FireArrowDecorator.cs" />
     <Compile Include="Engine\Skills\BasicSpells\LightFlash.cs" />
