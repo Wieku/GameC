@@ -144,9 +144,13 @@
     <Compile Include="Engine\Items\BasicAxe.cs" />
     <Compile Include="Engine\Items\ItemFactories\BasicArmorFactory.cs" />
     <Compile Include="Engine\Items\ItemFactories\ItemFactory.cs" />
+    <Compile Include="Engine\Items\ItemFactories\SwordFactory.cs" />
     <Compile Include="Engine\Items\Spear.cs" />
     <Compile Include="Engine\Items\Staff.cs" />
     <Compile Include="Engine\Items\Sword.cs" />
+    <Compile Include="Engine\Items\Swords\Aerondight.cs" />
+    <Compile Include="Engine\Items\Swords\Anferthe.cs" />
+    <Compile Include="Engine\Items\Swords\Deargdeith.cs" />
     <Compile Include="Engine\MapMatrix.cs" />
     <Compile Include="Engine\MetaMapMatrix.cs" />
     <Compile Include="Engine\Monsters\Monster.cs" />
@@ -269,6 +273,15 @@
   <ItemGroup>
     <Resource Include="Display\Assets\monster2160.png" />
     <Resource Include="Display\Assets\monster2161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Display\Assets\item2162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Display\Assets\item2163.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Display\Assets\item2164.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
