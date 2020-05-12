@@ -35,7 +35,8 @@ namespace Game.Engine
             new BerserkerArmor(),
             new GrowingStoneArmor(),
             new Aerondight(),
-            new Anferthe()
+            new Anferthe(),
+            new Deargdeith()
         };
 
         private static List<ItemFactory> itemFactories = new List<ItemFactory>()
