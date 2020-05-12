@@ -9,10 +9,7 @@ namespace Game.Engine.Monsters
     [Serializable]
     class OrcWarrior : Monster
     {
-
-        private int attacklessCounter = 0;
         
-        // example monster: rat
         public OrcWarrior(int orcLevel)
         {
             Health = 70 + 5 * orcLevel;
@@ -20,30 +17,26 @@ namespace Game.Engine.Monsters
             Armor = 20;
             Precision = 40;
             MagicPower = 0;
-            Stamina = 150;
+            Stamina = 300;
             XPValue = 40 + 2 * orcLevel;
             Name = "monster2160";
             BattleGreetings = "You've come to a bad place...";
         }
         public override List<StatPackage> BattleMove()
         {
-            if(Stamina > 0)
+            if(Stamina > 100)
             {
                 Stamina -= 50;
-                if (Stamina <= 0)
-                {
-                    attacklessCounter = 3;
-                }
-                return new List<StatPackage>() { new StatPackage("stab", 11 + Strength, "Orc Warrior uses his club! ("+ (11 + Strength) +" hit damage)") };
+                return new List<StatPackage>() { new StatPackage("stab", 11 + Strength, "Orc Warrior uses his club! ("+ (11 + Strength) +" stab damage)") };
+            }
+            else if(Stamina > 0)
+            {
+                Stamina -= 100;
+                return new List<StatPackage>() { new StatPackage("stab", 11 + (int)(Strength * 1.4), "Orc Warrior throws his club! ("+ (11 + (int)(Strength * 1.4)) +" stab damage)") };
             }
             else
             {
-                --attacklessCounter;
-                if (attacklessCounter <= 1)
-                {
-                    Stamina = 150;
-                }
-                return new List<StatPackage>() { new StatPackage("none", 0, "OrcWarrior has no energy to attack! He won't attack for " + attacklessCounter + " turns") };
+                return new List<StatPackage>() { new StatPackage("none", 0, "OrcWarrior has no energy to attack!") };
             }
         }
     }

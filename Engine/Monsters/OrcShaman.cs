@@ -24,7 +24,7 @@ namespace Game.Engine.Monsters
             Stamina = 150;
             XPValue = 40 + 4 * playerLevel;
             Name = "monster2161";
-            BattleGreetings = playerLevel < 3 ? "I hate to dominate weaklings, I will show you my mercy" : "I won't go easy for you";
+            BattleGreetings = playerLevel < 3 ? "I will decide your fate" : "I won't go easy on you";
         }
         public override List<StatPackage> BattleMove()
         {
