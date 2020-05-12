@@ -9,7 +9,6 @@ namespace Game.Engine.Monsters.MonsterFactories
     [Serializable]
     class OrcFactory : MonsterFactory
     {
-        // this factory produces rats (or evolved rats)
 
         private bool boss = false;
         private bool alreadySpawned = false;
