@@ -9,17 +9,17 @@ namespace Game.Engine.Skills.SkillFactories
     [Serializable]
     class AdvancedWeaponMoveFactory : SkillFactory
     {  
-        // this factory produces skills from BasicSpells directory
+        // this factory produces skills from AdvancedWeaponMoves directory
         public Skill CreateSkill(Player player)
         {
             List<Skill> playerSkills = player.ListOfSkills;
-            Skill known = CheckContent(playerSkills); // check what spells from the BasicSpells category are known by the player already
-            if (known == null) // no BasicSpells known - we will return one of them
+            Skill known = CheckContent(playerSkills); // check what spells from the AdvancedWeaponMoves category are known by the player already
+            if (known == null) // no AdvancedWeaponMoves known - we will return one of them
             {
                 SwordStab s1 = new SwordStab();
                 SwordDance s2 = new SwordDance();
                 LimbCut s3 = new LimbCut();
-                // only include elligible spells
+                // only include elligible moves
                 List<Skill> tmp = new List<Skill>();
                 if (s1.MinimumLevel <= player.Level) tmp.Add(s1); // check level requirements
                 if (s2.MinimumLevel <= player.Level) tmp.Add(s2);
@@ -27,7 +27,7 @@ namespace Game.Engine.Skills.SkillFactories
                 if (tmp.Count == 0) return null;
                 return tmp[Index.RNG(0, tmp.Count)]; // use Index.RNG for safe random numbers
             }
-            else if (known.decoratedSkill == null) // an Advanced Weapon Move has been already learned, use decorator to create a combo
+            else if (known.decoratedSkill == null) // an AdvancedWeaponMove has been already learned, use decorator to create a combo
             {
                 SwordStabDecorator s1 = new SwordStabDecorator(known);
                 SwordDanceDecorator s2 = new SwordDanceDecorator(known);
