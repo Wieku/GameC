@@ -290,5 +290,8 @@
   <ItemGroup>
     <Resource Include="Display\Assets\item2164.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
