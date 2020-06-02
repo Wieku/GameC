@@ -91,6 +91,32 @@ namespace Game.Engine
             }
             return false;
         }
+        
+        public List<string> GetInventoryItemNames()
+        {
+            // return names of all items as List<string>
+            List<string> ans = new List<string>();
+            for (int x = 0; x < 5; x++)
+            {
+                for (int y = 0; y < 6; y++)
+                {
+                    Image img = parentPage.GetImageFromGrid(x, y);
+                    if (img != null)
+                    {
+                        if (img.Name != "") ans.Add(img.Name);
+                    }
+                }
+            }
+            
+            return ans;
+        }
+        public bool TestForItemInInventory(string name)
+        {
+            // check if a particular item is in inventory
+            List<string> inventory = GetActiveItemNames();
+            return inventory.Contains(name);
+        }
+        
         public bool TestForItemClass(string name)
         {
             // check if ANY item from a given special class (staff,axe,spear,sword) is currently equipped as active
