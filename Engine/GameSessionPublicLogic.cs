@@ -117,6 +117,23 @@ namespace Game.Engine
             return inventory.Contains(name);
         }
         
+        public bool RemoveItemFromInventory(string name)
+        {
+            for (int x = 0; x < 5; x++)
+            {
+                for (int y = 0; y < 6; y++)
+                {
+                    Image img = parentPage.GetImageFromGrid(x, y);
+                    if (img != null && img.Name == name)
+                    {
+                        RemoveItemPosition(x, y);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        
         public bool TestForItemClass(string name)
         {
             // check if ANY item from a given special class (staff,axe,spear,sword) is currently equipped as active
