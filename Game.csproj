@@ -126,6 +126,7 @@
     <Compile Include="Engine\Interactions\ConsoleInteraction.cs" />
     <Compile Include="Engine\Interactions\Custom\CarrotStates\CarrotState.cs" />
     <Compile Include="Engine\Interactions\Custom\CarrotStates\CarrotStateCollectable.cs" />
+    <Compile Include="Engine\Interactions\Custom\CarrotStates\CarrotStateSoilDepleted.cs" />
     <Compile Include="Engine\Interactions\Custom\CarrotStates\ICarrotState.cs" />
     <Compile Include="Engine\Interactions\ImageInteraction.cs" />
     <Compile Include="Engine\Interactions\Interaction.cs" />
