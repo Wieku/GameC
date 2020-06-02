@@ -124,6 +124,7 @@
     <Compile Include="Engine\Interactions\Built-In\IHymirStrategy.cs" />
     <Compile Include="Engine\Interactions\Built-In\SkillForgetInteraction.cs" />
     <Compile Include="Engine\Interactions\ConsoleInteraction.cs" />
+    <Compile Include="Engine\Interactions\Custom\CarrotInteraction.cs" />
     <Compile Include="Engine\Interactions\Custom\CarrotStates\CarrotState.cs" />
     <Compile Include="Engine\Interactions\Custom\CarrotStates\CarrotStateCollectable.cs" />
     <Compile Include="Engine\Interactions\Custom\CarrotStates\CarrotStateSoilDepleted.cs" />
@@ -295,6 +296,7 @@
     <Resource Include="Display\Assets\item2164.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Display\Assets\interaction2161.png" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
