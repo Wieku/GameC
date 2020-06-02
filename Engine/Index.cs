@@ -7,6 +7,7 @@ using Game.Engine.Items.ItemFactories;
 using Game.Engine.Items.BasicArmor;
 using Game.Engine.Interactions;
 using Game.Engine.Interactions.InteractionFactories;
+using Game.Engine.Items.Custom;
 using Game.Engine.Items.Swords;
 
 namespace Game.Engine
@@ -37,7 +38,8 @@ namespace Game.Engine
             new GrowingStoneArmor(),
             new Aerondight(),
             new Anferthe(),
-            new Deargdeith()
+            new Deargdeith(),
+            new Carrot()
         };
 
         private static List<ItemFactory> itemFactories = new List<ItemFactory>()

@@ -146,6 +146,7 @@
     <Compile Include="Engine\Items\BasicSpear.cs" />
     <Compile Include="Engine\Items\BasicStaff.cs" />
     <Compile Include="Engine\Items\BasicSword.cs" />
+    <Compile Include="Engine\Items\Custom\Carrot.cs" />
     <Compile Include="Engine\Items\Item.cs" />
     <Compile Include="Engine\Index.cs" />
     <Compile Include="Engine\Items\BasicAxe.cs" />
@@ -299,6 +300,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Display\Assets\interaction2161.png" />
+    <Resource Include="Display\Assets\item2165.png" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
