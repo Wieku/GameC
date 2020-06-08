@@ -12,15 +12,16 @@ namespace Game.Engine.Interactions.Custom
             "What a beautiful day!",
         };
 
-        private OldManEncounter oldMan;
+        private bool hasHelpedOldMan;
+
+        public bool HasHelpedOldMan => hasHelpedOldMan;
 
         internal bool hasCarrotMission;
         internal bool hasPartialSeeds;
 
-        public FarmerEncounter(OldManEncounter oldMan, GameSession ses) : base(ses)
+        public FarmerEncounter(GameSession ses) : base(ses)
         {
             Name = "interaction2163";
-            this.oldMan = oldMan;
         }
 
         protected override void RunContent()
@@ -63,7 +64,7 @@ namespace Game.Engine.Interactions.Custom
                     parentSession.SendText("Are you seriously helping him? Have some for free!");
                     parentSession.AddThisItem(new Carrot());
                     parentSession.AddThisItem(new Carrot());
-                    oldMan.farmerHelped = true;
+                    hasHelpedOldMan = true;
                     hasCarrotMission = false;
                     break;
                 case "I want to buy a carrot (10 gold).":

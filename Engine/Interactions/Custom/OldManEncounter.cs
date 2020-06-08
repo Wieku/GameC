@@ -16,7 +16,6 @@ namespace Game.Engine.Interactions.Custom
         private FarmerEncounter farmer;
         
         internal bool hasSeeds = false;
-        internal bool farmerHelped;
 
         private OldManMissionState missionState = OldManMissionState.NotTaken;
 
@@ -108,7 +107,7 @@ namespace Game.Engine.Interactions.Custom
                     {
                         GetListBoxChoice(new List<string> { "Hi, I've collected 5 carrots"}); //Just a confirmation pause
 
-                        if (farmerHelped)
+                        if (farmer.HasHelpedOldMan)
                         {
                             parentSession.SendText("Seriously he helped you?! He's such a good man!");
                         }
