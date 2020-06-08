@@ -4,15 +4,26 @@ namespace Game.Engine.Interactions.Custom
 {
     class CarrotInteraction: ListBoxInteraction
     {
-        protected const int SoilDurability = 3;
+        public const int SoilDurability = 3;
 
-        private ICarrotState carrotState;
+        internal ICarrotState carrotState;
 
-        protected int timesGrown = 1;
+        internal int timesGrown = 1;
         
         public CarrotInteraction(GameSession ses) : base(ses)
         {
-            
+            switch (Index.RNG(0, 3))
+            {
+                case 0:
+                    carrotState = new CarrotStateGrowing(this, ses);
+                    break;
+                case 1:
+                    carrotState = new CarrotStateGrown(this, ses);
+                    break;
+                default:
+                    carrotState = new CarrotStateBlooming(this, ses);
+                    break;
+            }
         }
 
         protected override void RunContent()

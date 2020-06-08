@@ -2,13 +2,23 @@
 {
     class CarrotStateGrowing : CarrotState
     {
+        private bool wasRunOnce = false;
+            
         public CarrotStateGrowing(CarrotInteraction carrot, GameSession session) : base(carrot, session)
         {
         }
 
         public override bool Execute()
         {
-            throw new System.NotImplementedException();
+            if (!wasRunOnce)
+            {
+                carrot.timesGrown++;
+                wasRunOnce = true;
+            }
+
+            //TODO: Carrot grow
+            
+            return false;
         }
     }
 }
