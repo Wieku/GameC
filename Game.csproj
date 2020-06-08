@@ -133,6 +133,7 @@
     <Compile Include="Engine\Interactions\Custom\CarrotStates\CarrotStateSoilDepleted.cs" />
     <Compile Include="Engine\Interactions\Custom\CarrotStates\CarrotStateSoilEmpty.cs" />
     <Compile Include="Engine\Interactions\Custom\CarrotStates\ICarrotState.cs" />
+    <Compile Include="Engine\Interactions\Custom\OldManEncounter.cs" />
     <Compile Include="Engine\Interactions\ImageInteraction.cs" />
     <Compile Include="Engine\Interactions\Interaction.cs" />
     <Compile Include="Engine\Interactions\InteractionFactories\GymirHymirFactory.cs" />
@@ -303,6 +304,7 @@
   <ItemGroup>
     <Resource Include="Display\Assets\interaction2161.png" />
     <Resource Include="Display\Assets\item2165.png" />
+    <Resource Include="Display\Assets\interaction2162.png" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
