@@ -33,6 +33,7 @@ namespace Game.Engine.Interactions.Custom.CarrotStates
                                 return true;
                             
                             default:
+                                carrot.oldMan.hasSeeds = true;
                                 carrot.carrotState = new CarrotStateSoilEmpty(carrot, session);
                                 break;      
                         }

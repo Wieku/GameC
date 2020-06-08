@@ -8,11 +8,15 @@ namespace Game.Engine.Interactions.Custom
 
         internal ICarrotState carrotState;
 
+        internal OldManEncounter oldMan;
+
         internal int timesGrown = 1;
         
-        public CarrotInteraction(GameSession ses) : base(ses)
+        public CarrotInteraction(OldManEncounter oldMan, GameSession ses) : base(ses)
         {
             Name = "interaction2161";
+
+            this.oldMan = oldMan;
             
             switch (Index.RNG(0, 3))
             {
