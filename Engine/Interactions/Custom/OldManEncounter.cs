@@ -12,10 +12,11 @@ namespace Game.Engine.Interactions.Custom
             "Any fool can know. The point is to understand.",
             "Let no man pull you so low as to hate him."
         };
-        
+
+        private FarmerEncounter farmer;
         
         internal bool hasSeeds = false;
-        internal bool shopOwnerHelped = false;
+        internal bool farmerHelped;
 
         private OldManMissionState missionState = OldManMissionState.NotTaken;
 
@@ -23,9 +24,10 @@ namespace Game.Engine.Interactions.Custom
 
         private int payment;
 
-        public OldManEncounter(GameSession ses) : base(ses)
+        public OldManEncounter(FarmerEncounter farmer, GameSession ses) : base(ses)
         {
             Name = "interaction2162";
+            this.farmer = farmer;
         }
 
         protected override void RunContent()
@@ -65,6 +67,7 @@ namespace Game.Engine.Interactions.Custom
                             }
                             
                             parentSession.SendText("Bye!");
+                            farmer.hasCarrotMission = true;
                             missionState = OldManMissionState.InProgress;
                             break;
                         case 1:
@@ -79,6 +82,7 @@ namespace Game.Engine.Interactions.Custom
                                 case 0:
                                     parentSession.SendText("Fine then, see you later!");
                                     missionState = OldManMissionState.InProgressGreedy;
+                                    farmer.hasCarrotMission = true;
                                     payment = award;
                                     break;
                                 default:
@@ -104,6 +108,11 @@ namespace Game.Engine.Interactions.Custom
                     {
                         GetListBoxChoice(new List<string> { "Hi, I've collected 5 carrots"}); //Just a confirmation pause
 
+                        if (farmerHelped)
+                        {
+                            parentSession.SendText("Seriously he helped you?! He's such a good man!");
+                        }
+                        
                         if (missionState == OldManMissionState.InProgress)
                         {
                             parentSession.SendText("Thank you! Please wait a minute...");
@@ -135,8 +144,8 @@ namespace Game.Engine.Interactions.Custom
                                 parentSession.SendText("Thank you!");
                                 parentSession.UpdateStat(7, 100);
                                 parentSession.SendText("I don't need that many, you can sell some to the farmer.");
-                                
-                                //TODO: inform the farmer you have some spare seeds
+
+                                farmer.hasPartialSeeds = true;
                                 parentSession.SendText("Bye!");
                                 missionState = OldManMissionState.Finished;
                             }
@@ -161,7 +170,7 @@ namespace Game.Engine.Interactions.Custom
                             parentSession.SendText("Here, have some coins you good man.");
                             parentSession.UpdateStat(8, 10);
                             parentSession.SendText("I don't need that many, you can sell some to the farmer.");
-                            //TODO: inform the farmer you have some spare seeds
+                            farmer.hasPartialSeeds = true;
                             parentSession.SendText("Bye!");
                             missionState = OldManMissionState.Finished;
                         }

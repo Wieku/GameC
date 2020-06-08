@@ -14,8 +14,8 @@ namespace Game.Engine.Interactions.Custom
 
         private OldManEncounter oldMan;
 
-        internal bool hasCarrotMission = false;
-        internal bool hasPartialSeeds = false;
+        internal bool hasCarrotMission;
+        internal bool hasPartialSeeds;
 
         public FarmerEncounter(OldManEncounter oldMan, GameSession ses) : base(ses)
         {
@@ -63,7 +63,7 @@ namespace Game.Engine.Interactions.Custom
                     parentSession.SendText("Are you seriously helping him? Have some for free!");
                     parentSession.AddThisItem(new Carrot());
                     parentSession.AddThisItem(new Carrot());
-                    oldMan.shopOwnerHelped = true;
+                    oldMan.farmerHelped = true;
                     hasCarrotMission = false;
                     break;
                 case "I want to buy a carrot (10 gold).":
