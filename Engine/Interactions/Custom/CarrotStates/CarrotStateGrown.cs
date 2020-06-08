@@ -27,6 +27,7 @@ namespace Game.Engine.Interactions.Custom.CarrotStates
                     return true;
                 default:
                     session.SendText("You walk away allowing carrots to bloom.");
+                    carrot.carrotState = new CarrotStateBlooming(carrot, session);
                     break;
             }
 
