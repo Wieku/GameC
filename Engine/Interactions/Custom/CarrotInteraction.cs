@@ -12,6 +12,8 @@ namespace Game.Engine.Interactions.Custom
         
         public CarrotInteraction(GameSession ses) : base(ses)
         {
+            Name = "interaction2161";
+            
             switch (Index.RNG(0, 3))
             {
                 case 0:
